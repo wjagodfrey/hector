@@ -1,0 +1,30 @@
+{
+    "name": "expressions",
+    "version": "0.0.0",
+    "author": "Wilfred Godfrey <w.j.godfrey@gmail.com>",
+    "description": "Graphical expressions interface",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wilfredjamesgodfrey/expressions.git"
+    },
+    "keywords": [
+        "expressions",
+        "face",
+        "web",
+        "HTML",
+        "HTML5",
+        "javascript"
+    ],
+    "dependencies": {
+        "coffee-script": "1.7.x",
+        "colors": "x",
+        "stylus": "x",
+        "nib": "x",
+        "jade": "x",
+        "connect": "x"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10.*"
+    }
+}
