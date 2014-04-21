@@ -2,18 +2,25 @@ onEvent 'assetsLoaded', ->
 
 
   entities.push @face = face =
-    x: window.innerWidth/2
-    y: window.innerHeight/2
+    x: 0
+    y: 0
+
+    yOffset: -20
+
+    focal:
+      x: window.innerWidth/2
+      y: window.innerHeight/2
+    headSpeed: 4
     a:
-      backboard  : sprites.face.groups.backboard.frames
-      skin       : sprites.face.groups.skin.frames
-      mouth      : sprites.face.groups.mouth.frames
-      ears       : sprites.face.groups.ears.frames
-      nose       : sprites.face.groups.nose.frames
-      eye_whites : sprites.face.groups.eye_whites.frames
-      pupils     : sprites.face.groups.pupils.frames
-      eyebrows   : sprites.face.groups.eyebrows.frames
-      eyelids    : sprites.face.groups.eyelids.frames
+      backboard  : sprites.face.actions.backboard.frames
+      skin       : sprites.face.actions.skin.frames
+      mouth      : sprites.face.actions.mouth.frames
+      ears       : sprites.face.actions.ears.frames
+      nose       : sprites.face.actions.nose.frames
+      eye_whites : sprites.face.actions.eye_whites.frames
+      pupils     : sprites.face.actions.pupils.frames
+      eyebrows   : sprites.face.actions.eyebrows.frames
+      eyelids    : sprites.face.actions.eyelids.frames
 
     s:
       eyelids  : 'half' # closed, squint, half, open
@@ -43,16 +50,21 @@ onEvent 'assetsLoaded', ->
           @blinking = true
         , blinkTime
 
+    update: ->
+      
+      if !@headSpeed then @headSpeed = 1
+      @focal.x += (mouse.x - @focal.x) / @headSpeed
+      @focal.y += (mouse.y - @focal.y) / (@headSpeed * 1.6)
+
+      @x = gameCanvas.width/2
+      @y = gameCanvas.height/2 + (@yOffset * resizeFactor)
+
 
     draw: (ctx) ->
 
       pax =
-        x : (mouse.x - gameCanvas.width / 2) / gameCanvas.width/2
-        y : (mouse.y - gameCanvas.height / 2) / gameCanvas.height/2
-
-      faceMargin = 7
-      resizeFactor = Math.min(gameCanvas.height / @a.skin[0].height-faceMargin, gameCanvas.width / @a.ears[0].width-faceMargin)
-      if resizeFactor < 2 then resizeFactor = 2
+        x : (@focal.x - gameCanvas.width / 2) / gameCanvas.width / 2
+        y : (@focal.y - gameCanvas.height / 2) / gameCanvas.height / 2
 
       eyebrowOffset = -10*resizeFactor
       eyeOffset     = -4*resizeFactor
@@ -141,8 +153,8 @@ onEvent 'assetsLoaded', ->
       # backboard 0
       .save()
       .translate(
-        gameCanvas.width/2-@a.backboard[0].width*resizeFactor/2
-        gameCanvas.height/2-@a.backboard[0].height*resizeFactor/2
+        @x-@a.backboard[0].width*resizeFactor/2
+        @y-@a.backboard[0].height*resizeFactor/2
       )
       .drawImage(
         @a.backboard[0]
@@ -154,8 +166,8 @@ onEvent 'assetsLoaded', ->
       # ears
       .save()
       .translate(
-        (gameCanvas.width/2-@a.ears[0].width*resizeFactor/2) + earPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.ears[0].height*resizeFactor/2) + earPax  * resizeFactor * pax.y
+        (@x-@a.ears[0].width*resizeFactor/2) + earPax  * resizeFactor * pax.x
+        (@y-@a.ears[0].height*resizeFactor/2) + earPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.ears[0]
@@ -167,8 +179,8 @@ onEvent 'assetsLoaded', ->
       # skin 0
       .save()
       .translate(
-        gameCanvas.width/2-@a.skin[0].width*resizeFactor/2
-        gameCanvas.height/2-@a.skin[0].height*resizeFactor/2
+        @x-@a.skin[0].width*resizeFactor/2
+        @y-@a.skin[0].height*resizeFactor/2
       )
       .drawImage(
         @a.skin[0]
@@ -180,8 +192,8 @@ onEvent 'assetsLoaded', ->
       # skin 1
       .save()
       .translate(
-        (gameCanvas.width/2-@a.skin[1].width*resizeFactor/2) + middleSkinPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.skin[1].height*resizeFactor/2) + middleSkinPax  * resizeFactor * pax.y
+        (@x-@a.skin[1].width*resizeFactor/2) + middleSkinPax  * resizeFactor * pax.x
+        (@y-@a.skin[1].height*resizeFactor/2) + middleSkinPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.skin[1]
@@ -193,8 +205,8 @@ onEvent 'assetsLoaded', ->
       # skin 2
       .save()
       .translate(
-        (gameCanvas.width/2-@a.skin[2].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.skin[2].height*resizeFactor/2) + topSkinPax  * resizeFactor * pax.y
+        (@x-@a.skin[2].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
+        (@y-@a.skin[2].height*resizeFactor/2) + topSkinPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.skin[2]
@@ -206,8 +218,8 @@ onEvent 'assetsLoaded', ->
       # eye whites
       .save()
       .translate(
-        (gameCanvas.width / 2 - @a.eye_whites[0].width * resizeFactor / 2) + eyeballPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.eye_whites[0].height*resizeFactor/2+eyeOffset) + eyeballPax  * resizeFactor * pax.y
+        (@x - @a.eye_whites[0].width * resizeFactor / 2) + eyeballPax  * resizeFactor * pax.x
+        (@y-@a.eye_whites[0].height*resizeFactor/2+eyeOffset) + eyeballPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.eye_whites[0]
@@ -219,8 +231,8 @@ onEvent 'assetsLoaded', ->
       # pupils
       .save()
       .translate(
-        (gameCanvas.width/2-@a.pupils[@f.pupils].width*resizeFactor/2) + pupilPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.pupils[@f.pupils].height*resizeFactor/2+eyeOffset) + pupilPax  * resizeFactor * pax.y
+        (@x-@a.pupils[@f.pupils].width*resizeFactor/2) + pupilPax  * resizeFactor * pax.x
+        (@y-@a.pupils[@f.pupils].height*resizeFactor/2+eyeOffset) + pupilPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.pupils[@f.pupils]
@@ -232,8 +244,8 @@ onEvent 'assetsLoaded', ->
       # eyelids
       .save()
       .translate(
-        (gameCanvas.width/2-@a.eyelids[@f.eyelids].width*resizeFactor/2) + eyeballPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.eyelids[@f.eyelids].height*resizeFactor/2+eyeOffset) + eyeballPax  * resizeFactor * pax.y
+        (@x-@a.eyelids[@f.eyelids].width*resizeFactor/2) + eyeballPax  * resizeFactor * pax.x
+        (@y-@a.eyelids[@f.eyelids].height*resizeFactor/2+eyeOffset) + eyeballPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.eyelids[@f.eyelids]
@@ -245,8 +257,8 @@ onEvent 'assetsLoaded', ->
       # mouth
       .save()
       .translate(
-        (gameCanvas.width/2-@a.mouth[@f.mouth].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.mouth[@f.mouth].height*resizeFactor/2+mouthOffset) + topSkinPax  * resizeFactor * pax.y
+        (@x-@a.mouth[@f.mouth].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
+        (@y-@a.mouth[@f.mouth].height*resizeFactor/2+mouthOffset) + topSkinPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.mouth[@f.mouth]
@@ -258,8 +270,8 @@ onEvent 'assetsLoaded', ->
       # nose
       .save()
       .translate(
-        (gameCanvas.width/2-@a.nose[0].width*resizeFactor/2) + nosePax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.nose[0].height*resizeFactor/2+noseOffset) + nosePax  * resizeFactor * pax.y
+        (@x-@a.nose[0].width*resizeFactor/2) + nosePax  * resizeFactor * pax.x
+        (@y-@a.nose[0].height*resizeFactor/2+noseOffset) + nosePax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.nose[0]
@@ -271,8 +283,8 @@ onEvent 'assetsLoaded', ->
       # eyebrows
       .save()
       .translate(
-        (gameCanvas.width/2-@a.eyebrows[@f.eyebrows].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
-        (gameCanvas.height/2-@a.eyebrows[@f.eyebrows].height*resizeFactor/2+eyebrowOffset) + topSkinPax  * resizeFactor * pax.y
+        (@x-@a.eyebrows[@f.eyebrows].width*resizeFactor/2) + topSkinPax  * resizeFactor * pax.x
+        (@y-@a.eyebrows[@f.eyebrows].height*resizeFactor/2+eyebrowOffset) + topSkinPax  * resizeFactor * pax.y
       )
       .drawImage(
         @a.eyebrows[@f.eyebrows]

@@ -13,7 +13,10 @@ task 'build', 'Watch all jade, stylus and coffeescript files and build appropria
   jsFiles = [
     "#{jsPref}util.coffee"
     "#{jsPref}init.coffee"
+    "#{jsPref}wallpaper.coffee"
     "#{jsPref}face.coffee"
+    "#{jsPref}buttons.coffee"
+    "#{jsPref}hand.coffee"
     "#{jsPref}framework.coffee"
   ].join(' ')
 
