@@ -78,6 +78,6 @@ gameCq = cq().framework(
 ).appendTo 'body'
 gameCanvas = gameCq.canvas
 onEvent 'assetsLoaded', ->
-  console.log root.innerWidth
+  console.log root.innerWidth, root.innerHeight
   gameCanvas.width  = root.innerWidth
   gameCanvas.height = root.innerHeight

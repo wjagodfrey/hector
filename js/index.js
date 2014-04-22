@@ -609,7 +609,7 @@
   gameCanvas = gameCq.canvas;
 
   onEvent('assetsLoaded', function() {
-    console.log(root.innerWidth);
+    console.log(root.innerWidth, root.innerHeight);
     gameCanvas.width = root.innerWidth;
     return gameCanvas.height = root.innerHeight;
   });
