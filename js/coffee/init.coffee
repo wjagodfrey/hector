@@ -21,7 +21,7 @@ fireEvent = (eventName, args...) ->
 
 eyebrowsStates = ['flat', 'peak', 'valley']
 eyelidsStates  = ['closed', 'squint', 'half', 'open']
-mouthStates    = ['flat', 'happy', 'joyful', 'sad', 'sorrowful']
+mouthStates    = ['joyful', 'happy', 'flat', 'sad', 'sorrowful']
 pupilsStates   = ['small', 'large']
 
 loaded = false
