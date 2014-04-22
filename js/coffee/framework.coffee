@@ -27,9 +27,8 @@ gameCq = cq().framework(
     fireEvent 'onmousedown', x, y, btn
 
   onmousemove: mouseMoveHandler = (x, y) ->
-    mouse =
-      x: x
-      y: y
+    mouse.x = x
+    mouse.y = y
 
 
   ontouchstart: (x, y, touch) ->

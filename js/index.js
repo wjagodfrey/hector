@@ -579,10 +579,8 @@
       return fireEvent('onmousedown', x, y, btn);
     },
     onmousemove: mouseMoveHandler = function(x, y) {
-      return mouse = {
-        x: x,
-        y: y
-      };
+      mouse.x = x;
+      return mouse.y = y;
     },
     ontouchstart: function(x, y, touch) {
       if (touch.length === 1) {
