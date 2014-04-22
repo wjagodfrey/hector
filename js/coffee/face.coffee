@@ -4,7 +4,7 @@ onEvent 'assetsLoaded', =>
     x: 0
     y: 0
 
-    yOffset: -20
+    yOffset: -12
 
     focal:
       x: gameCanvas.width/2

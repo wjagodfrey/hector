@@ -227,7 +227,7 @@
       return entities.push(_this.face = face = {
         x: 0,
         y: 0,
-        yOffset: -20,
+        yOffset: -12,
         focal: {
           x: gameCanvas.width / 2,
           y: gameCanvas.height / 2
@@ -400,7 +400,7 @@
           a: sprites.buttons.actions[name].frames,
           f: 0,
           s: 'up',
-          yOffset: 40,
+          yOffset: 43,
           mouseOver: false,
           update: function() {
             this.x = gameCanvas.width / 2 + (btnGap * resizeFactor * i) - (btnGap * resizeFactor * ((btnNames.length - 1) / 2));
@@ -601,7 +601,7 @@
       }
       this.clear('#c6d191');
       this.context.mozImageSmoothingEnabled = this.context.webkitImageSmoothingEnabled = this.context.msImageSmoothingEnabled = this.context.imageSmoothingEnabled = false;
-      resizeFactor = Math.min(gameCanvas.width / 130, gameCanvas.height / 100);
+      resizeFactor = Math.min(gameCanvas.width / 130, gameCanvas.height / 120);
       if (resizeFactor < 2) {
         resizeFactor = 2;
       }

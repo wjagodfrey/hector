@@ -15,7 +15,7 @@ onEvent 'assetsLoaded', ->
         a         : sprites.buttons.actions[name].frames
         f         : 0
         s         : 'up' # up, down, hover
-        yOffset   : 40
+        yOffset   : 43
         mouseOver : false
 
         update: ->

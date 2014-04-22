@@ -63,7 +63,7 @@ gameCq = cq().framework(
       @context.msImageSmoothingEnabled     =
       @context.imageSmoothingEnabled       = false
 
-      resizeFactor = Math.min(gameCanvas.width / 130, gameCanvas.height / 100)
+      resizeFactor = Math.min(gameCanvas.width / 130, gameCanvas.height / 120)
       if resizeFactor < 2 then resizeFactor = 2
 
       # draw entities
