@@ -5,7 +5,7 @@ onEvent 'assetsLoaded', ->
   onEvent 'onmouseup', ->
     hand.f.point = 0
 
-  entities.push @hand = hand =
+  entities.push root.hand = hand =
 
     a:
       point  : sprites.hand.actions.point.frames

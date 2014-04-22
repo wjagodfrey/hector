@@ -1,4 +1,4 @@
-onEvent 'assetsLoaded', ->
+onEvent 'assetsLoaded', =>
 
   img = sprites.scenery.actions.wallpaper.frames[0]
 
@@ -17,7 +17,7 @@ onEvent 'assetsLoaded', ->
   .fillStyle(wallpaperPattern)
   .fill()
 
-  entities.push @wallpaper = wallpaper =
+  entities.push root.wallpaper = wallpaper =
 
     tile: cq()
 

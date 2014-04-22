@@ -1,6 +1,6 @@
 onEvent 'assetsLoaded', =>
 
-  entities.push @face = face =
+  entities.push root.face = face =
     x: 0
     y: 0
 

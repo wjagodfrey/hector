@@ -6,7 +6,7 @@ onEvent 'assetsLoaded', ->
 
   for name, href of linkBtns
     do (name, href) ->
-      entities.push @btns[name] = btns[name] =
+      entities.push root.btns[name] = btns[name] =
 
         a         : sprites.buttons.actions[name].frames
         f         : 0

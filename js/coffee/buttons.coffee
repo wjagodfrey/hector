@@ -1,14 +1,14 @@
-onEvent 'assetsLoaded', ->
+btns = {}
+root.btns = {}
 
-  btns = {}
-  @btns = {}
+btnGap = 20
+btnNames = ['eyebrows','eyelids','mouth','pupils']
 
-  btnGap = 20
-  btnNames = ['eyebrows','eyelids','mouth','pupils']
+onEvent 'assetsLoaded', =>
 
   for i, name of btnNames
-    do (i, name) ->
-      entities.push @btns[name] = btns[name] =
+    do (i, name) =>
+      entities.push root.btns[name] = btns[name] =
         x: 0
         y: 0
 
