@@ -1,6 +1,7 @@
 
-frame = 0
+frame        = 0
 resizeFactor = 2
+hasTouch     = 'ontouchstart' in document.documentElement
 
 @mouse = mouse =
   x    : root.innerWidth/2
@@ -8,6 +9,7 @@ resizeFactor = 2
   down : false
   up   : false
 
+touchDown    = false
 touchMove    = false
 touchTimeout = {}
 
@@ -17,7 +19,6 @@ gameCq = cq().framework(
     if mouse.y > height then mouse.y = height
     @canvas.width = width
     @canvas.height = height
-    wallpaper.resize()
     return
 
   onmouseup: mouseUpHandler = (x, y, btn) ->
@@ -35,22 +36,22 @@ gameCq = cq().framework(
       y: y
 
 
-  ontouchstart: (x, y) ->
-    mouseMoveHandler x, y
-    clearTimeout touchTimeout
-    touchTimeout = setTimeout ->
-      if !touchMove
-        mouseDownHandler x, y
-    , 500
+  ontouchstart: (x, y, touch) ->
+    if touch.length is 1
+      mouseMoveHandler x, y
 
-  ontouchmove: (x, y) ->
+  ontouchmove: (x, y, touch) ->
     touchMove = true
     mouseMoveHandler x, y
 
-  ontouchend: (x, y) ->
+  ontouchend: (x, y, touch) ->
     if !touchMove
-      mouseUpHandler x, y
-      touchMove = false
+      mouseDownHandler x, y
+      clearTimeout touchTimeout
+      touchTimeout = setTimeout ->
+        mouseUpHandler x, y
+      , 100
+    touchMove = false
 
   onrender: (delta, time) ->
     # if frame < 50

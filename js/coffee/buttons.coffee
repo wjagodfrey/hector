@@ -9,7 +9,6 @@ onEvent 'assetsLoaded', ->
   for i, name of btnNames
     do (i, name) ->
       entities.push @btns[name] = btns[name] =
-        # i: i
         x: 0
         y: 0
 
@@ -42,33 +41,34 @@ onEvent 'assetsLoaded', ->
             if mouse.up
 
               if name is 'pupils'
-                states = ['small', 'large']
+                states = pupilsStates
                 index = states.indexOf(face.s.pupils)+1
                 if index >= states.length
                   index = 0
                 face.s.pupils = states[index]
 
               else if name is 'eyebrows'
-                states = ['flat', 'peak', 'valley']
+                states = eyebrowsStates
                 index = states.indexOf(face.s.eyebrows)+1
                 if index >= states.length
                   index = 0
                 face.s.eyebrows = states[index]
 
               else if name is 'eyelids'
-                states = ['open', 'half', 'squint', 'closed']
+                states = eyelidsStates
                 index = states.indexOf(face.s.eyelids)+1
                 if index >= states.length
                   index = 0
                 face.s.eyelids = states[index]
 
               else if name is 'mouth'
-                states = ['sorrowful', 'sad', 'flat', 'happy', 'joyful']
+                states = mouthStates
                 index = states.indexOf(face.s.mouth)+1
                 if index >= states.length
                   index = 0
                 face.s.mouth = states[index]
 
+              setUrlSettings()
 
 
 

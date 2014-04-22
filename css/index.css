@@ -4,3 +4,8 @@ body {
 canvas {
   cursor: none;
 }
+#overlay {
+  position: absolute;
+  top: 0;
+  color: #f00;
+}

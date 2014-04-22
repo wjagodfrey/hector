@@ -21,9 +21,6 @@ onEvent 'assetsLoaded', ->
 
     tile: cq()
 
-    resize: ->
-      console.log 'resize!'
-
     draw: (ctx) ->
       sourceWidth  = gameCanvas.width / resizeFactor
       sourceX      = wallpaperSource.canvas.width / 2 - sourceWidth / 2

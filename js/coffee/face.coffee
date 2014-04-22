@@ -1,5 +1,4 @@
-onEvent 'assetsLoaded', ->
-
+onEvent 'assetsLoaded', =>
 
   entities.push @face = face =
     x: 0
@@ -22,11 +21,12 @@ onEvent 'assetsLoaded', ->
       eyebrows   : sprites.face.actions.eyebrows.frames
       eyelids    : sprites.face.actions.eyelids.frames
 
-    s:
-      eyelids  : 'half' # closed, squint, half, open
-      eyebrows : 'flat' # flat, peak, valley
-      mouth    : 'flat' # flat, happy, joyful, sad, sorrowful
-      pupils   : 'small' # small, large
+    s: getUrlSettings() or {
+      eyelids  : 'half'
+      eyebrows : 'flat'
+      mouth    : 'flat'
+      pupils   : 'small'
+    }
 
     f:
       eyebrows : 0
@@ -64,7 +64,7 @@ onEvent 'assetsLoaded', ->
 
       pax =
         x : (@focal.x - gameCanvas.width / 2) / gameCanvas.width / 2
-        y : (@focal.y - gameCanvas.height / 2) / gameCanvas.height / 2
+        y : (@focal.y - (@yOffset * resizeFactor) - (gameCanvas.height / 2)) / gameCanvas.height / 2
 
       eyebrowOffset = -10*resizeFactor
       eyeOffset     = -4*resizeFactor
