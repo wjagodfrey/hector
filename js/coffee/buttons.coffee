@@ -39,6 +39,7 @@ onEvent 'assetsLoaded', ->
               @s = 'hover'
 
             if mouse.up
+              console.log 'up!'
 
               if name is 'pupils'
                 states = pupilsStates
