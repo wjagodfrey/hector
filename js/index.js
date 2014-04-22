@@ -589,7 +589,7 @@
       }
       this.clear('#c6d191');
       this.context.mozImageSmoothingEnabled = this.context.webkitImageSmoothingEnabled = this.context.msImageSmoothingEnabled = this.context.imageSmoothingEnabled = false;
-      resizeFactor = Math.min(gameCanvas.height / 130, gameCanvas.width / 100);
+      resizeFactor = Math.min(root.innerHeight / 130, root.innerWidth / 100);
       if (resizeFactor < 2) {
         resizeFactor = 2;
       }
@@ -607,5 +607,9 @@
   }).appendTo('body');
 
   gameCanvas = gameCq.canvas;
+
+  gameCanvas.width = root.innerWidth;
+
+  gameCanvas.height = root.innerHeight;
 
 }).call(this);
