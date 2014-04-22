@@ -34,8 +34,10 @@ onEvent 'assetsLoaded', =>
           @s = 'up'
           if @mouseOver
             if mouse.down
+              console.log 'down'
               @s = 'down'
             else
+              console.log 'over'
               @s = 'hover'
 
             if mouse.up
