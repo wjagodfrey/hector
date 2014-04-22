@@ -12,8 +12,10 @@ onEvent = (eventName, eventHandler) ->
   ->
     events[eventName].splice events[eventName].indexOf(eventHandler), 1
 fireEvent = (eventName, args...) ->
+  console.log 'firing event', eventName
   if events[eventName]?.length
     for eventHandler in events[eventName]
+      console.log 'found one'
       eventHandler(args...)
 
 @sprites = sprites =

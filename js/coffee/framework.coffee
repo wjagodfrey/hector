@@ -18,11 +18,13 @@ gameCq = cq().framework(
     return
 
   onmouseup: mouseUpHandler = (x, y, btn) ->
+    console.log 'up'
     mouse.down = false
     mouse.up = true
     fireEvent 'onmouseup', x, y, btn
 
   onmousedown: mouseDownHandler = (x, y, btn) ->
+    console.log 'down'
     touchDown = true
     mouse.down = true
     fireEvent 'onmousedown', x, y, btn
