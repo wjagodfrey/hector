@@ -68,19 +68,19 @@ gameCq = cq().framework(
       mouse.up = false
 
       return
-
-
 )
+
 gameCanvas = gameCq.canvas
+
 onEvent 'assetsLoaded', ->
 
+  console.log root.innerWidth
   @mouse = mouse =
-    x    : root.innerWidth/2
-    y    : root.innerHeight/2
+    x    : root.innerWidth / 2
+    y    : root.innerHeight / 2
     down : false
     up   : false
 
-  console.log root.innerWidth, root.innerHeight
   gameCanvas.width  = root.innerWidth
   gameCanvas.height = root.innerHeight
   gameCq.appendTo 'body'
