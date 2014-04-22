@@ -63,11 +63,13 @@
   fireEvent = function() {
     var args, eventHandler, eventName, _i, _len, _ref, _ref1, _results;
     eventName = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+    console.log('firing event', eventName);
     if ((_ref = events[eventName]) != null ? _ref.length : void 0) {
       _ref1 = events[eventName];
       _results = [];
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
         eventHandler = _ref1[_i];
+        console.log('found one');
         _results.push(eventHandler.apply(null, args));
       }
       return _results;
@@ -558,11 +560,13 @@
       this.canvas.height = height;
     },
     onmouseup: mouseUpHandler = function(x, y, btn) {
+      console.log('up');
       mouse.down = false;
       mouse.up = true;
       return fireEvent('onmouseup', x, y, btn);
     },
     onmousedown: mouseDownHandler = function(x, y, btn) {
+      console.log('down');
       touchDown = true;
       mouse.down = true;
       return fireEvent('onmousedown', x, y, btn);
