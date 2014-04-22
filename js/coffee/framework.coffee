@@ -83,12 +83,9 @@ onEvent 'assetsLoaded', ->
   gameCanvas.width  = root.innerWidth
   gameCanvas.height = root.innerHeight
 
-  @mouse = mouse =
-    x    : gameCanvas.width / 2
-    y    : gameCanvas.height / 2
-    down : false
-    up   : false
-
   console.log mouse
 
   gameCq.appendTo 'body'
+
+  mouse.x = gameCanvas.width / 2
+  mouse.y = gameCanvas.height / 2

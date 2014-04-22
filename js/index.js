@@ -623,14 +623,10 @@
   onEvent('assetsLoaded', function() {
     gameCanvas.width = root.innerWidth;
     gameCanvas.height = root.innerHeight;
-    this.mouse = mouse = {
-      x: gameCanvas.width / 2,
-      y: gameCanvas.height / 2,
-      down: false,
-      up: false
-    };
     console.log(mouse);
-    return gameCq.appendTo('body');
+    gameCq.appendTo('body');
+    mouse.x = gameCanvas.width / 2;
+    return mouse.y = gameCanvas.height / 2;
   });
 
 }).call(this);
