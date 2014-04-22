@@ -86,3 +86,5 @@ onEvent 'assetsLoaded', ->
 
   mouse.x = gameCanvas.width / 2
   mouse.y = gameCanvas.height / 2
+  mouse.up = false
+  mouse.down = false

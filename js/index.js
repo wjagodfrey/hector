@@ -636,7 +636,9 @@
     gameCanvas.height = root.innerHeight;
     gameCq.appendTo('body');
     mouse.x = gameCanvas.width / 2;
-    return mouse.y = gameCanvas.height / 2;
+    mouse.y = gameCanvas.height / 2;
+    mouse.up = false;
+    return mouse.down = false;
   });
 
 }).call(this);
