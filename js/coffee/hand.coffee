@@ -18,10 +18,11 @@ onEvent 'assetsLoaded', ->
     s: 'open'
 
     draw: (ctx) ->
-      # return
-      ctx # go forth and draw
 
-      .save()
+      # return
+      ctx.save()
+      ctx.context.globalAlpha = 0.8
+      ctx
       .translate(
         mouse.x - @a.point[@f.point].width*(resizeFactor/2)/2
         mouse.y

@@ -1,15 +1,10 @@
 
-frame        = 0
-resizeFactor = 2
-hasTouch     = 'ontouchstart' in document.documentElement
-
 @mouse = mouse =
   x    : root.innerWidth/2
   y    : root.innerHeight/2
   down : false
   up   : false
 
-touchDown    = false
 touchMove    = false
 touchTimeout = {}
 
@@ -27,6 +22,7 @@ gameCq = cq().framework(
     fireEvent 'onmouseup', x, y, btn
 
   onmousedown: mouseDownHandler = (x, y, btn) ->
+    touchDown = true
     mouse.down = true
     fireEvent 'onmousedown', x, y, btn
 
@@ -38,6 +34,7 @@ gameCq = cq().framework(
 
   ontouchstart: (x, y, touch) ->
     if touch.length is 1
+      touchDown = true
       mouseMoveHandler x, y
 
   ontouchmove: (x, y, touch) ->
@@ -45,6 +42,7 @@ gameCq = cq().framework(
     mouseMoveHandler x, y
 
   ontouchend: (x, y, touch) ->
+    touchDown = false
     if !touchMove
       mouseDownHandler x, y
       clearTimeout touchTimeout

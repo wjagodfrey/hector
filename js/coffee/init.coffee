@@ -1,5 +1,9 @@
 root = @
 
+frame        = 0
+resizeFactor = 2
+touchDown    = false
+
 # event sys
 events = {}
 onEvent = (eventName, eventHandler) ->
