@@ -121,6 +121,12 @@
         },
         "pupils": {
           "frames": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAVklEQVQYV2NkAIKzsV7/QTQ+YLx4GyMjMQphhlCuWHfBVriLLid4w9koJoMUgSSJUgwzgiTFuEKFNA8uczX9ry4hSiiYGW6+eM3ACFIF0kBIddTu04wA07oqT0GgdvYAAAAASUVORK5CYII=", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAVklEQVQYV2NkAILbXTX/QTQ+oFrWwshIjEKYIZQrVihphrvoQU8tnI1iMkgRSJIoxTAjSFKMK1RI8+C+ypz/soIChIKZ4fH7DwyMIFUgDYRUO7VPYQQALJctzZGvn44AAAAASUVORK5CYII=", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAQElEQVQYV2NkIAEwgtTem9z6n5AepdxqRkZiFMIMolyxXHYV3FWPprbB2SgmgxSBJIlSDDOCJMW4QoY0D5ISzgDfJii+hjaIIQAAAABJRU5ErkJggg=="]
+        },
+        "github": {
+          "frames": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAoUlEQVQ4T7WTUQ7AIAhD9eYefdFEA0gLZNu+tqGPQqE3/gwQRv9br14w5y+wBcLM2UokUML2O0tgz6zvCBgIW2EF3kCrpFK6quwX4Bt1uyWHMRUy4Ix5cXgnAmZMkcYslz0DKqZ8DlTJkUKVldR9VeKNDTLCct1WsTlUG2BoqMcDrV5UMjSSAa+hFSpTQKQqM1ZqUzwTJYQBoctoMjzH6fY89gMmFeRHadgAAAAASUVORK5CYII=", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAApUlEQVQ4T62U2w6AMAhD3f9/tGZLWADbgpm+ObZDuY5LfzcxD/aMGRgoc17v80EXRMEe6GF2rhzkO+u/AhYpXmZzGoBZCU068BAiY6EdAU/UmeDNmEoUcNpQJ9DuqICdovjCLO+oNb7k8HdgEMQU5h5lob+iQ23TzStMlerDMAFJIt1CbPSqkGkhFdBEoYq3gKH8LsQOcN/pLFgFLBdsbg80enJ6HjOFKQ/l9ytHAAAAAElFTkSuQmCC"]
+        },
+        "twitter": {
+          "frames": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAYAAAAiYZ4HAAAAXElEQVQoU2NkAIJP336UgmgQ4OPi6IaxsdGMIMVO537B5fYZseHVNEAasLkd5jcMJ+HyMMxvA6ABZDVJfhhC8QBLZ0QHK0gDyH+MsNSKnADxRR5YA3oSx6UBlDwA4+Jou2bk0eoAAAAASUVORK5CYII=", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAYAAAAiYZ4HAAAAY0lEQVQoU2NkAIJPP37+B9EgwMfBzghjY6MZQYqdz/6Gy+01ZsWraYA0YHM7zG8YTsLlYZjfBkADyGpsEcELjZ8BClZ8yQOrk3AFLcggooMVZMg+WICgJ0BcNsA1oCdxfE4CAE+6adfQxgaIAAAAAElFTkSuQmCC"]
         }
       }
     },
@@ -128,9 +134,6 @@
       "actions": {
         "wallpaper": {
           "frames": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAjElEQVQ4T8XVUQ6AIAwDUHtuvz33DCQjqGN2CMh382wImxCRYyMOgJ3NJg5MOKH6bSZPwTUawd3GFsriTdhDGdyEGfQNf8AR1MMvcA/awgv8BbXwDI9A7ziIoQtHctlpjXVER1xHPe7zX4VeZE9zazGtm7xIc2+Frt9uXnNm2f/3B6mbM01LPhKOzPYJV1udQ5ZTsREAAAAASUVORK5CYII="]
-        },
-        "github": {
-          "frames": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAoUlEQVQ4T7WTUQ7AIAhD9eYefdFEA0gLZNu+tqGPQqE3/gwQRv9br14w5y+wBcLM2UokUML2O0tgz6zvCBgIW2EF3kCrpFK6quwX4Bt1uyWHMRUy4Ix5cXgnAmZMkcYslz0DKqZ8DlTJkUKVldR9VeKNDTLCct1WsTlUG2BoqMcDrV5UMjSSAa+hFSpTQKQqM1ZqUzwTJYQBoctoMjzH6fY89gMmFeRHadgAAAAASUVORK5CYII=", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAApUlEQVQ4T62U2w6AMAhD3f9/tGZLWADbgpm+ObZDuY5LfzcxD/aMGRgoc17v80EXRMEe6GF2rhzkO+u/AhYpXmZzGoBZCU068BAiY6EdAU/UmeDNmEoUcNpQJ9DuqICdovjCLO+oNb7k8HdgEMQU5h5lob+iQ23TzStMlerDMAFJIt1CbPSqkGkhFdBEoYq3gKH8LsQOcN/pLFgFLBdsbg80enJ6HjOFKQ/l9ytHAAAAAElFTkSuQmCC"]
         }
       }
     }
@@ -443,34 +446,50 @@
   });
 
   onEvent('assetsLoaded', function() {
-    var github;
-    return entities.push(this.github = github = {
-      x: 0,
-      y: 0,
-      a: sprites.scenery.actions.github.frames,
-      f: 0,
-      s: 'off',
-      update: function() {
-        this.x = gameCanvas.width - (this.a[this.f].width * 2) / 2 - 20;
-        this.y = (this.a[this.f].height * 2) - 15;
-        return this.mouseOver = hasMouseHit(this.x, this.y, this.a[this.f].width * 2, this.a[this.f].height * 2);
-      },
-      draw: function(ctx) {
-        this.s = 'off';
-        if (this.mouseOver) {
-          this.s = 'hover';
-          if (mouse.up) {
-            document.location.href = 'http://github.com/wilfredjamesgodfrey/hector';
+    var href, linkBtns, name, _results;
+    linkBtns = {
+      github: 'http://github.com/wilfredjamesgodfrey/hector',
+      twitter: 'http://twitter.com/wjagodfrey'
+    };
+    _results = [];
+    for (name in linkBtns) {
+      href = linkBtns[name];
+      _results.push((function(name, href) {
+        return entities.push(this.btns[name] = btns[name] = {
+          a: sprites.buttons.actions[name].frames,
+          f: 0,
+          s: 'off',
+          update: function() {
+            this.x = gameCanvas.width - (this.a[this.f].width * 2) / 2;
+            this.y = this.a[this.f].height * 2;
+            if (name === 'twitter') {
+              this.x -= 28;
+              this.y -= 5;
+            } else if (name === 'github') {
+              this.x -= 20;
+              this.y += 35;
+            }
+            return this.mouseOver = hasMouseHit(this.x, this.y, this.a[this.f].width * 2, this.a[this.f].height * 2);
+          },
+          draw: function(ctx) {
+            this.s = 'off';
+            if (this.mouseOver) {
+              this.s = 'hover';
+              if (mouse.up) {
+                document.location.href = href;
+              }
+            }
+            if (this.s === 'hover') {
+              this.f = 1;
+            } else {
+              this.f = 0;
+            }
+            return ctx.save().translate(this.x - this.a[this.f].width * 2 / 2, this.y - this.a[this.f].height * 2 / 2).drawImage(this.a[this.f], 0, 0, this.a[this.f].width, this.a[this.f].height, 0, 0, this.a[this.f].width * 2, this.a[this.f].height * 2).restore();
           }
-        }
-        if (this.s === 'hover') {
-          this.f = 1;
-        } else {
-          this.f = 0;
-        }
-        return ctx.save().translate(this.x - this.a[this.f].width * 2 / 2, this.y - this.a[this.f].height * 2 / 2).drawImage(this.a[this.f], 0, 0, this.a[this.f].width, this.a[this.f].height, 0, 0, this.a[this.f].width * 2, this.a[this.f].height * 2).restore();
-      }
-    });
+        });
+      })(name, href));
+    }
+    return _results;
   });
 
   onEvent('assetsLoaded', function() {

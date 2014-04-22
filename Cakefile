@@ -16,7 +16,7 @@ task 'build', 'Watch all jade, stylus and coffeescript files and build appropria
     "#{jsPref}wallpaper.coffee"
     "#{jsPref}face.coffee"
     "#{jsPref}buttons.coffee"
-    "#{jsPref}github.coffee"
+    "#{jsPref}links.coffee"
     "#{jsPref}hand.coffee"
     "#{jsPref}framework.coffee"
   ].join(' ')
