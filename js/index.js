@@ -520,8 +520,6 @@
       return hand.f.point = 0;
     });
     return entities.push(this.hand = hand = {
-      x: gameCanvas.width / 2,
-      y: gameCanvas.height / 2,
       a: {
         point: sprites.hand.actions.point.frames
       },
@@ -623,15 +621,15 @@
   gameCanvas = gameCq.canvas;
 
   onEvent('assetsLoaded', function() {
-    console.log(root.innerWidth);
+    gameCanvas.width = root.innerWidth;
+    gameCanvas.height = root.innerHeight;
     this.mouse = mouse = {
-      x: root.innerWidth / 2,
-      y: root.innerHeight / 2,
+      x: gameCanvas.width / 2,
+      y: gameCanvas.height / 2,
       down: false,
       up: false
     };
-    gameCanvas.width = root.innerWidth;
-    gameCanvas.height = root.innerHeight;
+    console.log(mouse);
     return gameCq.appendTo('body');
   });
 
