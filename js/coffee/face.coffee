@@ -7,8 +7,8 @@ onEvent 'assetsLoaded', =>
     yOffset: -20
 
     focal:
-      x: window.innerWidth/2
-      y: window.innerHeight/2
+      x: gameCanvas.width/2
+      y: gameCanvas.height/2
     headSpeed: 4
     a:
       backboard  : sprites.face.actions.backboard.frames
