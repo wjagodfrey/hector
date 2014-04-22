@@ -1,9 +1,4 @@
 
-@mouse = mouse =
-  x    : root.innerWidth/2
-  y    : root.innerHeight/2
-  down : false
-  up   : false
 
 touchMove    = false
 touchTimeout = {}
@@ -78,6 +73,13 @@ gameCq = cq().framework(
 )
 gameCanvas = gameCq.canvas
 onEvent 'assetsLoaded', ->
+
+  @mouse = mouse =
+    x    : root.innerWidth/2
+    y    : root.innerHeight/2
+    down : false
+    up   : false
+
   console.log root.innerWidth, root.innerHeight
   gameCanvas.width  = root.innerWidth
   gameCanvas.height = root.innerHeight
