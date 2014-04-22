@@ -62,7 +62,7 @@ gameCq = cq().framework(
       @context.msImageSmoothingEnabled     =
       @context.imageSmoothingEnabled       = false
 
-      resizeFactor = Math.min(root.innerHeight / 130, root.innerWidth / 100)
+      resizeFactor = Math.min(gameCanvas.width / 130, gameCanvas.height / 100)
       if resizeFactor < 2 then resizeFactor = 2
 
       # draw entities
@@ -78,5 +78,6 @@ gameCq = cq().framework(
 ).appendTo 'body'
 gameCanvas = gameCq.canvas
 onEvent 'assetsLoaded', ->
-  gameCanvas.width = root.innerWidth
+  console.log root.innerWidth
+  gameCanvas.width  = root.innerWidth
   gameCanvas.height = root.innerHeight
