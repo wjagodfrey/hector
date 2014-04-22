@@ -34,11 +34,11 @@
   };
 
   setUrlSettings = function() {
-    var settings, url;
+    var settings, url, _ref;
     url = root.document.URL;
     url = url.substring(0, url.indexOf("#"));
     settings = "#" + (eyebrowsStates.indexOf(face.s.eyebrows)) + (eyelidsStates.indexOf(face.s.eyelids)) + (mouthStates.indexOf(face.s.mouth)) + (pupilsStates.indexOf(face.s.pupils));
-    return root.window.location.hash = settings;
+    return (_ref = root.history) != null ? typeof _ref.replaceState === "function" ? _ref.replaceState('', root.document.title, url + settings) : void 0 : void 0;
   };
 
   root = this;

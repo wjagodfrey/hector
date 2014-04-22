@@ -25,4 +25,5 @@ setUrlSettings = ->
   url = root.document.URL
   url = url.substring(0, url.indexOf("#"))
   settings = "##{eyebrowsStates.indexOf(face.s.eyebrows)}#{eyelidsStates.indexOf(face.s.eyelids)}#{mouthStates.indexOf(face.s.mouth)}#{pupilsStates.indexOf(face.s.pupils)}"
-  root.window.location.hash = settings
+  root.history?.replaceState?('', root.document.title, url+settings);
+
