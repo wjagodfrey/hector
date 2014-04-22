@@ -608,8 +608,9 @@
 
   gameCanvas = gameCq.canvas;
 
-  gameCanvas.width = root.innerWidth;
-
-  gameCanvas.height = root.innerHeight;
+  onEvent('assetsLoaded', function() {
+    gameCanvas.width = root.innerWidth;
+    return gameCanvas.height = root.innerHeight;
+  });
 
 }).call(this);
