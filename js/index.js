@@ -420,10 +420,10 @@
               this.s = 'up';
               if (this.mouseOver) {
                 if (mouse.down) {
-                  console.log('down');
+                  console.log('down', mouse);
                   this.s = 'down';
                 } else {
-                  console.log('over');
+                  console.log('over', mouse);
                   this.s = 'hover';
                 }
                 if (mouse.up) {
