@@ -22,7 +22,7 @@ onEvent 'assetsLoaded', =>
       eyelids    : sprites.face.actions.eyelids.frames
 
     s: getUrlSettings() or {
-      eyelids  : 'half'
+      eyelids  : 'open'
       eyebrows : 'flat'
       mouth    : 'flat'
       pupils   : 'small'

@@ -3,6 +3,12 @@
 touchMove    = false
 touchTimeout = {}
 
+@mouse = mouse =
+  x    : 0
+  y    : 0
+  down : false
+  up   : false
+
 gameCq = cq().framework(
   onresize: (width, height) ->
     if mouse.x > width then mouse.x = width

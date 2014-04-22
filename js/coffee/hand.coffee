@@ -6,8 +6,8 @@ onEvent 'assetsLoaded', ->
     hand.f.point = 0
 
   entities.push @hand = hand =
-    x: window.innerWidth/2
-    y: window.innerHeight/2
+    x: gameCanvas.width / 2
+    y: gameCanvas.height / 2
 
     a:
       point  : sprites.hand.actions.point.frames
