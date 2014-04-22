@@ -559,11 +559,13 @@
       this.canvas.height = height;
     },
     onmouseup: mouseUpHandler = function(x, y, btn) {
+      console.log('up', frame);
       mouse.down = false;
       mouse.up = true;
       return fireEvent('onmouseup', x, y, btn);
     },
     onmousedown: mouseDownHandler = function(x, y, btn) {
+      console.log('down', frame);
       mouse.down = true;
       return fireEvent('onmousedown', x, y, btn);
     },
