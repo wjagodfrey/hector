@@ -420,14 +420,11 @@
               this.s = 'up';
               if (this.mouseOver) {
                 if (mouse.down) {
-                  console.log('down', mouse);
                   this.s = 'down';
                 } else {
-                  console.log('over', mouse);
                   this.s = 'hover';
                 }
                 if (mouse.up) {
-                  console.log('up!');
                   if (name === 'pupils') {
                     states = pupilsStates;
                     index = states.indexOf(face.s.pupils) + 1;
